@@ -6,7 +6,26 @@
 </head>
 <body>
 
-    <h1>Week 5</h1>
+    <h1>{{ @title }}</h1>
 
+    <p>You are logged in as {{ @username }} with password {{ @password }}</p>
+    <p>Testing...</p>
+
+    <h2>Temperature</h2>
+    <p>Fahrenheit: {{ @temp }}</p>
+    <p>Celsius: {{ round((@temp-32) * (5/9), 2) }}</p>
+
+    <p>I like {{ @color }}</p>
+    <p>The circumference of a circle is {{ round(@radius * 2 * pi(), 2) }}</p>
+
+    <h2>Bookmarks</h2>
+    <repeat group="{{ @bookmarks }}" value="{{ @bookmarks }}">
+        <p>{{ @bookmarks }}</p>
+    </repeat>
+
+    <h2><strong>Dessert Options</strong></h2>
+    <repeat group="{{ @desserts }}" key="{{ @val }}" value="{{ @text }}">
+        <input type="checkbox" value="{{ @val }}"> {{ @text }} <br>
+    </repeat>
 </body>
 </html>
