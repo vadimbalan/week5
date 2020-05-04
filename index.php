@@ -25,8 +25,16 @@ $f3->route('GET /', function($f3)
     $f3->set('temp', 67);
     $f3->set('color', "purple");
     $f3->set('radius', '10');
+
+    // Define an array of bookmarks
     $f3->set('bookmarks', array('http://ww.cnet.com', 'http://www.reddit.com/r/news', 'http://edition.cnn.com/sport'));
+
+    // Define an associative array of desserts
     $f3->set('desserts', array("chocolate"=>"Chocolate Mousse", "vanilla"=>"Vanilla Custard", "strawberry"=>"Strawberry Shortcake"));
+
+    // Conditional Content
+    $f3->set('preferredCustomer', true);
+    $f3->set('lastLogin', strtotime('-1 week'));
 
     // Display template
     $view = new Template();
